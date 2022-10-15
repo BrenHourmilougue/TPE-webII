@@ -21,9 +21,9 @@
             return $sentencia->fetch(PDO::FETCH_OBJ);
         }
         //INSERTO UN PRODUCTO
-        function InsertProduct($id,$nombre,$precio,$stock,$descripcion,$id_categoria,$marca){
-            $sentencia = $this->db->prepare("INSERT INTO producto(id, nombre, precio, stock, descripcion, id_categoria, marca) VALUES(?,?,?,?,?,?,?)");
-            $sentencia->execute(array($id,$nombre,$precio,$stock,$descripcion,$id_categoria,$marc));
+        function InsertProduct($product,$price,$stock,$description,$categoria){
+            $sentencia = $this->db->prepare("INSERT INTO producto(nombre, precio, stock, descripcion, id_categoria) VALUES(?,?,?,?,?)");
+            $sentencia->execute(array($product,$price,$stock,$description,$categoria));
             return $this->db->lastInsertId();
         }
         //ELIMINO UN PRODUCTO

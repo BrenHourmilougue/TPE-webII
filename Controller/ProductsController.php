@@ -65,17 +65,15 @@
         function InsertProduct(){
             $logeado = $this->CheckLoggedIn();
             if($logeado && $_SESSION['ADMIN'] == 1){
-                if (isset($_POST['input_product']) && isset($_POST['input_brand']) && isset($_POST['input_price']) &&
+                if (isset($_POST['input_product']) && isset($_POST['input_price']) &&
                     isset($_POST['input_stock']) && isset($_POST['input_description']) && isset($_POST['select_categoria'])) {
-                    $nombre = $_POST['input_product'];
-                    $precio = $_POST['input_price'];
+                    $product = $_POST['input_product'];
+                    $price = $_POST['input_price'];
                     $stock = $_POST['input_stock'];
-                    $descripcion = $_POST['input_description'];
+                    $description = $_POST['input_description'];
                     $categoria =  $_POST['select_categoria'];
-                    $marca = $_POST['input_brand'];
-                    $id = $this->model->InsertProduct($id,$nombre,$precio,$stock,$descripcion,$id_categoria,$marca);
+                    $id_product = $this->model->InsertProduct($product,$price,$stock,$description,$categoria);
                     $fileTemp = $_FILES['input_file']['tmp_name'];
-                    
                     for($i=0; $i<count($_FILES['input_file']['tmp_name']); $i++){
                         $name = basename($_FILES["input_file"]["name"][$i]);
                         if($name){
