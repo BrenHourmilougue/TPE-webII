@@ -16,7 +16,6 @@
         <thead>
             <tr>
                 <th>Producto</th>
-                <th>Marca</th>
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Descripción</th>
@@ -26,7 +25,6 @@
         <tbody>
                 <tr>
                     <td>{$product->nombre}</td>
-                    <td>{$product->marca}</td>
                     <td>{$product->precio}</td>
                     <td>{$product->stock}</td>
                     <td>{$product->descripcion}</td>

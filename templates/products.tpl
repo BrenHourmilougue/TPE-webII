@@ -20,7 +20,6 @@
         <thead>
             <tr>
                 <th>Producto</th>
-                <th>Marca</th>
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Descripción</th>
@@ -31,7 +30,6 @@
             {foreach from=$products item=product}
                 <tr>
                     <td>{$product->nombre}</td>
-                    <td>{$product->marca}</td>
                     <td>{$product->precio}</td>
                     <td>{$product->stock}</td>
                     <td>{$product->descripcion}</td>
