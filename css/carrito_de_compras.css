@@ -1,0 +1,285 @@
+/*PROMEDIO POR ESTRELLAS*/
+*{
+    color: white;
+}
+.div_average {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.average {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+}
+
+
+.contenedor_table {
+    width: 100%;
+}
+
+.table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 4%;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.table_productos {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto 15% auto auto;
+    margin-bottom: 1%;
+    justify-content: space-between;
+}
+
+
+
+.titulo_table {
+    padding: 2% 0;
+    margin: 2% 0;
+    text-transform: uppercase;
+    background-image: url(../images/fondo.jpg);
+    font-size: 20px;
+}
+
+th, td {
+    padding: 2%;
+    min-width: 50px;
+    font-size: 14px;
+    border: 1px solid rgb(170, 170, 170);
+    border-collapse: collapse;
+    text-transform: capitalize;
+}
+
+.excepcion {
+    border: inset 0pt;
+    padding: 0;
+}
+
+.td_imag{
+    border: inset 0pt;
+}
+
+
+.btn {
+    margin: 1%;
+    height: 10%;
+}
+
+/*LOGOUT*/
+
+.div_logout {
+    margin: 2% 2% 2% auto;
+    text-align: center;
+    width: 10%;
+}
+
+.cerarSesion {
+    text-transform: uppercase;
+    color: grey;
+    margin-bottom: 5%;
+}
+
+/*LOGOUT USER*/
+
+.contenedor_logout_user {
+    display: flex;
+}
+
+.contenedor_logout_user div {
+    text-align: center;
+    width: 20%;
+}
+
+
+.cerar_sesion_user {
+    text-transform: uppercase;
+    color: grey;
+    margin: 5% auto;
+}
+
+button {
+    margin: 0 2%;
+}
+
+/*BOTON DE LA TABLA (EDITAR Y BORRAR)*/
+
+td.excepcion button {
+    width: 30px;
+    height: 35px;
+    background-color: rgb(241, 239, 239);
+    border: solid 1px rgb(230, 230, 230);
+}
+
+td.excepcion button.verMas{
+    width: 80px;
+}
+
+button a {
+    text-decoration: none;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+button {
+    padding: 1%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 10px;
+}
+
+/**/
+
+form {
+    margin: 2% 0;
+    text-align: center;
+}
+
+.input {
+    text-align: center;
+    width: 10%;
+    height: 20%;
+    margin: auto;
+}
+
+input, button {
+    padding: 0.5%;
+    font-size: 14px;
+}
+
+select {
+    height: 33px;
+}
+
+.select_categoria{
+    margin-top: 0.8%;
+}
+
+/*CONTENEDOR DE FILE*/
+.form_edit_product {
+    margin: 2% 0;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.cont1_form_edit_product{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.cont_file {
+    width: 70%;
+    padding: 5px 0;
+    margin: auto;
+}
+
+/*BOTON DE SELECIONAR UNA IMAGEN*/
+
+.btn_file {
+    width: 132px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*IMAGEN DE EDITAR PRODUCTO*/
+
+.edit_img {
+    margin-top: 2%;
+}
+
+.btn_delete_img{
+    margin: 0;
+    margin-right: 2%;
+}
+
+/*MENSAJE DE ALERTA DE ELIMINADO DE UNA CATEGORIA*/
+
+.close {
+    display: none;
+}
+
+#alert {
+    background-color: rgb(243, 193, 193);
+    padding: 2%;
+    margin: 2% 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(155, 17, 17);
+}
+
+.sowAlert {
+    width: 20px;
+    font-size: 20px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: rgb(155, 17, 17);
+}
+
+
+/*MENSAJE DE CONTRASEÑA INCORRECTA*/
+
+h2 {
+    background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2%;
+    margin: 2% 0;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url(../images/fondo.jpg);
+    padding: 2%;
+    margin: 2% 0;
+    color: white;
+}
+
+h3 {
+    width: 80%;
+    text-align: center;
+    margin: 2% auto 0 16%;
+}
+
+
+/*FORMULARIO DE COMENTARIOS*/
+
+.form_comentarios {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea_commet {
+    width: 60%;
+    margin: 2% auto;
+}
+
+.valoracion {
+    text-align: center;
+}
+
+
+/*VISTA DE OS COMENTARIOS*/
+
+h4 {
+    text-align: center;
+    background-image: url(../images/fondo.jpg);
+    width: 60%;
+    margin: auto;
+    padding: 1% 0;
+}
