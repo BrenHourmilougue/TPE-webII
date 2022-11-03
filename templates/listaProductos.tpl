@@ -10,13 +10,9 @@
         </tr>
     </thead>
     <tbody>
-        {foreach from=$products item=$product}
+        {foreach from=$productos item=$producto}
         <tr>
-            <td>{$product->producto}</td>
-            <td>{$product->marca}</td>
-            <td>{$product->categoria}</td>
-            <td>{$product->stock}</td>
-            <td>{$product->precio}</td>
+            <td>{$producto->producto}</td>
         </tr>
     </tbody>
 </table>

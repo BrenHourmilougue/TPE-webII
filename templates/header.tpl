@@ -9,8 +9,8 @@
 <body>
     <nav>
         <ul>
-            <li>Productos</li>
-            <li>Categorias</li>
-            <li>Login</li>
+            <li><a href="productos">Productos</a> </li>
+            <li><a href ="categorias">Categorias</a></li>
+            <li><a href="login">Login</a></li>
         </ul>
     </nav>
