@@ -12,8 +12,13 @@
     <tbody>
         {foreach from=$productos item=$producto}
         <tr>
-            <td>{$producto->producto}</td>
+            <td>{$producto->nombre}</td>
+            <td>{$producto->marca}</td>
+            <td>{$producto->categoria}</td>
+            <td>{$producto->Stock}</td>
+            <td>{$producto->Precio}</td>
         </tr>
+        {/foreach}
     </tbody>
 </table>
 {include 'footer.tpl'}

@@ -1,5 +1,6 @@
 <?php
 require_once './app/controllers/product.controller.php';
+require_once './app/controllers/categoria.controller.php';
 require_once './app/controllers/auth.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -39,16 +40,20 @@ switch ($params[0]) {
         $productController = new ProductsController();
         $productController->showProducts();
         break;
+    case 'categorias':
+        $categoriasController = new CategoriasController();
+        $categoriasController->showCategorias();
+        break;
     case 'nuevoProducto':
-        $productController = new ProductController();
+        $productController = new ProductsController();
         $productController->addProduct();
         break;
     case 'nuevaCategoria':
-        $categoriaController = new CategoriaController();
+        $categoriaController = new CategoriasController();
         $categoriaController->addCategoria();
         break;
     case 'delete':
-        $productController = new ProductController();
+        $productController = new ProductsController();
         // obtengo el parametro de la acción
         $id = $params[1];
         $productController->deleteProduct($id);

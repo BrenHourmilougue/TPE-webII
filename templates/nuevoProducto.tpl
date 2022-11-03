@@ -7,16 +7,19 @@
             <input type="text" required class="form-control" id="codigo" name="codigo">
         </div>
         <div class="form-group">
-            <label for="producto">Producto</label>
-            <input type="text" required class="form-control" id="producto" name="producto">
+            <label for="nombre">Producto</label>
+            <input type="text" required class="form-control" id="nombre" name="nombre">
         </div>
         <div class="form-group">
             <label for="marca">Marca</label>
             <input type="text" required class="form-control" id="marca" name="marca">
         </div>
         <div class="form-group">
-            <label for="categoria">Categoria</label>
-            <input type="text" required class="form-control" id="categoria" name="categoria">
+            <select name='habitat' class="form-select" aria-label="Default select example">
+                {foreach from=$categorias item=$categoria}
+                    <option name='categoria' value="{$categoria->categoria}"</option>
+                {/foreach}
+            </select>
         </div>
         <div class="form-group">
             <label for="stock">Stock</label>
