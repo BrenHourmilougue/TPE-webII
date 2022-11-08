@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2022 a las 15:49:47
+-- Tiempo de generación: 08-11-2022 a las 03:26:44
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
   `categoria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,12 +35,12 @@ CREATE TABLE `categorias` (
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `categoria`) VALUES
-(1, 'Herramientas de mano'),
-(2, 'Maquinas'),
-(5, 'Jardineria'),
-(6, 'Albanileria'),
-(7, 'Productos quimicos');
+INSERT INTO `categorias` (`categoria`) VALUES
+('Albanileria'),
+('Herramientas de mano'),
+('Jardineria'),
+('Maquinas'),
+('Productos quimicos');
 
 -- --------------------------------------------------------
 
@@ -53,7 +52,7 @@ CREATE TABLE `productos` (
   `id_producto` varchar(45) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `marca` varchar(45) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
+  `categoria` varchar(45) NOT NULL,
   `Stock` int(11) DEFAULT NULL,
   `Precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -62,11 +61,8 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id_producto`, `nombre`, `marca`, `id_categoria`, `Stock`, `Precio`) VALUES
-('DDO4523', 'Pinza', 'Bremen', 1, 5, 3000),
-('ITU7348121893', 'Mecha Widia 5.25mm', 'Fischer', 2, 20, 1000),
-('TAL2462', 'Fratacho', 'nn', 6, 25, 620),
-('Tal5632', 'Regador', 'Plastirrabit', 5, 2, 2000);
+INSERT INTO `productos` (`id_producto`, `nombre`, `marca`, `categoria`, `Stock`, `Precio`) VALUES
+('DDO4523', 'Caladora 550W', 'Skil', 'Maquinas', 5, 6200);
 
 -- --------------------------------------------------------
 
@@ -75,7 +71,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `marca`, `id_categoria`, `Stoc
 --
 
 CREATE TABLE `usuarios` (
-  `usename` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -83,8 +79,12 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usename`, `password`) VALUES
-('bren', 'hola');
+INSERT INTO `usuarios` (`username`, `password`) VALUES
+('bren2', '$2y$10$nEmFxa3Y2KDEl5VQiogSn.CBoNEesU3zZEg22a291lY8m8aJQxP3G'),
+('bren3', '$2y$10$fwJQu0yC60.GGcEUHUFSSe5E4UlXGll97xoeUc223X81J0KyY9VNu'),
+('brendasaurio', '$2y$10$RkcRtgMhzj/MTdMiPwqRfuqNKJsm0FiV7VRKpIBA7YKHCP32b0rL.'),
+('hola', '$2y$10$SHRrw7zkiCNj6yaitL9J3u.qtID0eLDkGKHVJprT0QJgSikVNzewy'),
+('jaja', '$2y$10$LZBKPzj2Cg4wQfty9Z6HO.3l01ngGOLzTIbtmGbW7fPiKjWv7P2ZG');
 
 --
 -- Índices para tablas volcadas
@@ -94,29 +94,30 @@ INSERT INTO `usuarios` (`usename`, `password`) VALUES
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id_categoria`);
+  ADD PRIMARY KEY (`categoria`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id_producto`);
+  ADD PRIMARY KEY (`id_producto`),
+  ADD KEY `categoria` (`categoria`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`usename`);
+  ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Restricciones para tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- Filtros para la tabla `productos`
 --
-ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`categoria`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

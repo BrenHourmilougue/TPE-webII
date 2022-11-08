@@ -46,7 +46,7 @@ switch ($params[0]) {
         break;
     case 'nuevoProducto':
         $productController = new ProductsController();
-        $productController->addProduct();
+        $productController->showAddProducts();
         break;
     case 'nuevaCategoria':
         $categoriaController = new CategoriasController();

@@ -2,16 +2,20 @@
 require_once './app/models/product.model.php';
 require_once './app/views/product.view.php';
 require_once './app/helpers/auth.helper.php';
+require_once './app/controllers/auth.controller.php';
 
 class ProductsController {
     private $model;
     private $view;
     private $categoriasModel;
     private $categoriasView;
+    private $authHelper;
+    private $authController;
 
     public function __construct() {
         $this->model = new ProductsModel();
         $this->view = new ProductsView();
+        $authController = new AuthController();
 
         //barrera de seguridad
         $authHelper = new AuthHelper();
@@ -25,14 +29,19 @@ class ProductsController {
     }
 
     function showAddProducts(){
-        $this->helper->checkLoggedIn();
+        $loggeado = $this->authHelper->checkLoggedIn();
         $categorias = $this->categoriasModel->getAllCategorias();
+        if($loggeado){
         $this->view->showAddProducts($categorias);
+        }
+        else{
+            $this->authController->showFormLogin();
+        }
     }
     
     function addProduct() {
         // TODO: validar entrada de datos
-        $loggeado = $this->helper->checkLoggedIn();
+        $loggeado = $this->authHelper->checkLoggedIn();
             if($loggeado){
                 if (isset($_POST['input_product']) && isset($_POST['input_price']) &&
                     isset($_POST['input_stock']) && isset($_POST['input_description']) && isset($_POST['select_categoria'])) {
